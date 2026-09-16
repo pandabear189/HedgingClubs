@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ClubHedge — hedge the anxiety</title>
+<meta name="description" content="Private play-money prediction market for club recruiting season." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%230c0c0d'/><path d='M3 3h2v4h6V3h2v10h-2V9H5v4H3z' fill='%23e8ff59'/></svg>" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark">CH</span>
+    <div class="brandtext">
+      <h1>ClubHedge</h1>
+      <p id="poolLabel" class="sub">no pool loaded</p>
+    </div>
+  </div>
+  <div class="topmeta">
+    <div class="meta-item"><span class="k">bank</span><span class="v" id="metaBank">—</span></div>
+    <div class="meta-item"><span class="k">open bets</span><span class="v" id="metaOpen">—</span></div>
+    <div class="meta-item"><span class="k">markets</span><span class="v" id="metaMarkets">—</span></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab is-active" data-view="board">Board</button>
+  <button class="tab" data-view="house">House</button>
+  <button class="tab" data-view="leaderboard">Standings</button>
+  <button class="tab" data-view="setup">Setup</button>
+  <button class="tab" data-view="pool">Pool</button>
+</nav>
+
+<main id="app"></main>
+
+<footer class="foot">
+  <span>Play money. No payments, no real stakes, no excuses.</span>
+  <span class="dot">•</span>
+  <span>All state lives in this browser. Export before you clear it.</span>
+</footer>
+
+<!-- Bet slip / generic modal -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <button class="modal-x" data-close aria-label="Close">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<input type="file" id="fileInput" accept="application/json,.json" hidden />
+
+<script src="app.js"></script>
+</body>
+</html>
